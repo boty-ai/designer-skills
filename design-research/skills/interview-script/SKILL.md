@@ -1,6 +1,6 @@
 ---
 name: interview-script
-description: Create a structured user interview script with warm-up, core exploration, and wrap-up sections. Use when preparing for user research interviews to ensure consistent, insightful conversations.
+description: Write a structured interview guide — warm-up, core exploration, and wrap-up. Use before running interviews. For analysing what comes back, use `summarize-interview`.
 ---
 
 # Interview Script
@@ -30,6 +30,19 @@ You are a senior UX researcher preparing an interview script for $ARGUMENTS. If 
 3. **Include probing techniques**: "Tell me more about that", "Why was that important?", "What happened next?"
 4. **Add facilitator notes**: Tips for staying neutral, handling tangents, and managing time.
 5. Think step by step. Present the script in a ready-to-use format.
+
+## Question Quality Guardrails
+
+**Ensure all questions are non-leading.** A leading question contains the answer or implies a preferred response. Replace any question that assumes sentiment, behaviour, or outcome.
+
+| Leading (avoid) | Non-leading (use) |
+|---|---|
+| "Was that frustrating?" | "How did you feel about that?" |
+| "Did you find it easy?" | "How easy or difficult was that for you?" |
+| "Did you like the feature?" | "What did you notice about that feature, if anything?" |
+| "Would you use this?" | "How would you use this in your work, if at all?" |
+
+**Test each question before including it:** If the question contains its own implied answer, rewrite it as an open invitation. If the question can be answered with yes or no, extend it ("...and why?").
 
 ## Further Reading
 

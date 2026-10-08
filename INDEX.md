@@ -1,8 +1,10 @@
 # Skill Index
 
-**107 skills**, arranged by the situation you're in rather than the folder they live in.
+**111 skills**, arranged by the situation you're in rather than the folder they live in.
 
 Three ways to use this page: read **Start here** if you know your situation but not the vocabulary, check **Frequently confused** if two skills look interchangeable, or search the full tables at the bottom with Ctrl-F.
+
+Or skip the reading: `/designer-toolkit:start-here` asks what you're working on and routes you to one command, the two that follow it, and the stages you can skip.
 
 Skills are knowledge — you don't invoke them, the agent pulls them in when the work calls for it. Commands are workflows you type, written plugin-then-verb like `/design-research:discover`. Naming a skill in your prompt works fine too: "use `form-design`".
 
@@ -10,6 +12,9 @@ Skills are knowledge — you don't invoke them, the agent pulls them in when the
 
 **I'm starting something from nothing.**
 `design-brief` to frame it, then `/design-research:discover` for personas and journeys. If you're arguing about what the product is *for*, `north-star-vision` first.
+
+**I've been handed a dashboard and asked why people drop off.**
+`behavioural-analytics` to read the shape and rule out tracking artefacts first. If the numbers and your research disagree, that's `qual-quant-triangulation`.
 
 **I have research I haven't made sense of.**
 One session, `summarize-interview`. Many sessions at once, `affinity-diagram`. Looking for the motivation underneath, `jobs-to-be-done`.
@@ -35,6 +40,9 @@ One session, `summarize-interview`. Many sessions at once, `affinity-diagram`. L
 **I have to defend this work.**
 `design-rationale` to write the reasoning down, `design-negotiation` for the conversation itself, `business-design` for the commercial vocabulary, `design-impact-reporting` to show what it earned.
 
+**I only have one idea and I don't trust it.**
+`parallel-concepts` to build a spread that differs in what the user actually does, `concept-selection` to close it out on criteria you fixed beforehand. `/prototyping-testing:explore-options` runs both ends.
+
 ## Frequently confused
 
 The pairs most likely to fire in each other's place. Every skill's own description carries these boundaries too — this is just the collision list in one view.
@@ -52,6 +60,14 @@ The pairs most likely to fire in each other's place. Every skill's own descripti
 | `form-design` / `error-handling-ux` | The artifact is a form | You need a product-wide error strategy |
 | `design-brief` / `north-star-vision` | Kickoff for one specific project | Long-horizon aspiration across many projects |
 | `design-critique` / `heuristic-evaluation` | Running a session with people in the room | One expert evaluating against known heuristics |
+| `parallel-concepts` / `prototype-strategy` | Deciding how many directions to carry and how they differ | Deciding the fidelity and method for building one |
+| `concept-selection` / `opportunity-framework` | Choosing between solutions to the same problem | Choosing which problem is worth solving at all |
+| `concept-selection` / `a-b-test-design` | Deciding before build, on criteria you set in advance | The change can ship and production traffic can decide |
+| `behavioural-analytics` / `metrics-definition` | Reading data someone already collected | Choosing what to measure before anything is collected |
+| `behavioural-analytics` / `a-b-test-design` | Finding where the problem is in data you have | Proving a specific change causes an effect |
+| `behavioural-analytics` / `design-impact-reporting` | Working out what the numbers mean | Telling stakeholders what they meant |
+| `qual-quant-triangulation` / `affinity-diagram` | Two sources disagree and one must win | Synthesising qualitative material on its own |
+| `qual-quant-triangulation` / `behavioural-analytics` | The conflict is between data and research | The question is only about the data |
 
 ## Every skill by phase
 
@@ -59,19 +75,21 @@ Sorted by name within each phase, so which plugin a skill belongs to never chang
 
 <!-- BEGIN GENERATED INDEX -->
 
-### Discover (12)
+### Discover (14)
 
 Understand users, context, and the problem as it actually is.
 
 | Reach for it | Skill | Plugin |
 | --- | --- | --- |
 | When synthesising across multiple sessions or sources | `affinity-diagram` | design-research |
+| When handed product data you did not design and asked why people drop off | `behavioural-analytics` | design-research |
 | After running a sort study | `card-sort-analysis` | design-research |
 | When behaviour unfolds over days or weeks | `diary-study-plan` | design-research |
 | When sharing user understanding quickly | `empathy-map` | design-research |
 | Before running interviews | `interview-script` | design-research |
 | When reframing decisions around motivation rather than features | `jobs-to-be-done` | design-research |
 | When improving an existing experience | `journey-map` | design-research |
+| When behavioural data and research findings point different ways | `qual-quant-triangulation` | design-research |
 | When the same research keeps getting redone | `research-repository` | design-research |
 | Immediately after a session | `summarize-interview` | design-research |
 | When you need quantitative breadth | `survey-design` | design-research |
@@ -163,7 +181,7 @@ Turn repeated decisions into components, tokens, and rules.
 | When documenting a recurring solution rather than a component | `pattern-library` | design-systems |
 | When one system must serve multiple themes | `theming-system` | design-systems |
 
-### Validate (15)
+### Validate (17)
 
 Check it works — with users, against heuristics, and by eye.
 
@@ -172,6 +190,7 @@ Check it works — with users, against heuristics, and by eye.
 | When a change can be measured quantitatively at scale | `a-b-test-design` | prototyping-testing |
 | When scheduling testing with real AT users | `accessibility-test-plan` | prototyping-testing |
 | When testing whether people can locate something | `click-test-plan` | prototyping-testing |
+| When several directions are alive and one has to win | `concept-selection` | prototyping-testing |
 | When reviewing an existing screen | `critique-affordance` | visual-critique |
 | When those brand files exist and you are checking compliance | `critique-brand-consistency` | visual-critique |
 | When reviewing one screen | `critique-color` | visual-critique |
@@ -180,6 +199,7 @@ Check it works — with users, against heuristics, and by eye.
 | When reviewing type on a screen | `critique-typography` | visual-critique |
 | When attention lands in the wrong place | `critique-visual-hierarchy` | visual-critique |
 | When you need findings without recruiting participants | `heuristic-evaluation` | prototyping-testing |
+| When one direction is on the table and the team is about to refine it by default | `parallel-concepts` | prototyping-testing |
 | Before building a prototype | `prototype-strategy` | prototyping-testing |
 | When you have a study and need the tasks | `test-scenario` | prototyping-testing |
 | When specifying how a feature is traversed | `user-flow-diagram` | prototyping-testing |

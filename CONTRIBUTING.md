@@ -69,22 +69,29 @@ A skill is ready when it passes these tests:
 A command is ready when:
 
 1. **The linter passes** — same as above.
-2. **Every step names a skill** — "using `skill-name` skill" at the end of each step line.
+2. **Every step names a skill** — "using `skill-name` skill" at the end of each step line. The exception is a *router* like `/start-here`, whose steps route to other commands rather than wrapping skills; a router names commands as `/plugin:command` instead.
 3. **No cross-plugin skill references** — a command in `interaction-design` may only reference skills in `interaction-design`.
 4. **3–7 steps** — fewer than 3 is probably just a skill invocation, not a workflow. More than 7 is doing too much.
 5. **Output is described specifically** — name the artifact and its sections, not just "a specification".
 
 ## Verifying your work
 
-Run all three scripts before every commit:
+Run these before every commit — CI runs the same set, so a clean local run means a green PR:
 
 ```
 python3 scripts/lint-frontmatter.py
+python3 scripts/check-runtimes.py
 python3 scripts/generate-readmes.py
 python3 scripts/generate-index.py
+bash   scripts/build-gemini.sh
+python3 scripts/check-marketplace.py
 ```
 
-`lint-frontmatter.py` reports frontmatter errors with file and line references.
+`lint-frontmatter.py` reports frontmatter errors with file and line references. It parses with a real YAML parser, so it sees your frontmatter the way a runtime does: an unquoted `argument-hint: [like this]` is a *list* in YAML, not a string, which is what silently broke four skills on Copilot CLI in #27. **Quote any value containing brackets, a colon, or a bare `yes`/`no`.** Needs PyYAML (`pip install pyyaml`).
+
+`check-runtimes.py` asks the separate question of whether each runtime can actually load what we ship — the frontmatter contract plus each plugin's Gemini extension manifest and context file.
+
+`check-marketplace.py` confirms every plugin in `marketplace.json` still resolves — local sources to a real directory, remote ones to a clonable URL. Add `--network` to also check the remote repos are reachable.
 
 `generate-readmes.py` rebuilds all plugin README skill/command lists and the root README table from the actual files on disk — so counts stay in sync automatically.
 

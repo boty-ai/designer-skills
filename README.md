@@ -2,7 +2,7 @@
 
 Design skills for the agent era, written so an AI agent can actually use them.
 
-**241 skills and 91 commands across 33 plugins, in five collections**, for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) and [Gemini CLI](https://github.com/google-gemini/gemini-cli).
+**273 skills and 76 commands across 33 plugins, in five collections**, for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) and [Gemini CLI](https://github.com/google-gemini/gemini-cli).
 
 **Not sure which skill you need? Start with the [skill index](./INDEX.md)** — every skill in this repo arranged by the situation you're in, plus the pairs most often mistaken for each other.
 
@@ -21,6 +21,8 @@ These skills run inside an AI coding assistant. The easiest place to use them is
 This just tells Claude where the skills live. Nothing installs yet.
 
 **3. Pick what you want.** Type `/plugin` and press enter, then open the **Discover** tab. You'll see all the collections. Move with the arrow keys, press space to tick the ones you want, and enter to install. That's it.
+
+**4. Don't know which skill you need?** Type `/designer-toolkit:start-here` and say what you're working on. It names the stage you're at, gives you one command to run now and the two that follow it, and tells you what you can skip. Use it whenever you're unsure where a piece of work begins.
 
 ### I only want the design skills, not everything
 
@@ -56,27 +58,33 @@ cp -r /tmp/designer-skills/.gemini/extensions/. .gemini/extensions/
 | [Design leadership](https://github.com/Owl-Listener/design-leadership-skills) | 6 | Leading design: people, teams, strategy, org influence, operating cadence, leadership craft. |
 | [Inclusive design](https://github.com/Owl-Listener/inclusive-design-skills) | 6 | Accessible by default: cognitive accessibility, inclusive interaction, accessible content, inclusive personas, adaptive interfaces, accessibility decisions. |
 
-Each collection also lives in its own repo, with its own stars and full detail. This repo is the front door, and the home of the design-practice collection below.
+The other four collections each live in their own repo, with their own stars and full detail, and this marketplace pulls their plugins in for you — so the one install above covers all five. This repo is the front door, and the home of the design-practice collection below.
 
 ---
 
 ## Design practice (this repo)
 
-Agentic skills, commands, and plugins for design, from research to systems, UI, interaction, and delivery. **107 skills and 32 commands across 9 plugins.**
+Agentic skills, commands, and plugins for design, from research to systems, UI, interaction, and delivery. **111 skills and 34 commands across 9 plugins.**
 
 ### Plugins
 
 | Plugin | Skills | Commands | Description |
 | --- | --- | --- | --- |
-| design-research | 12 | 4 | User research: personas, empathy maps, journey maps, interviews, usability testing, card sorting, surveys, and research repositories. |
+| design-research | 14 | 4 | User research, qualitative and quantitative: personas, empathy maps, journey maps, interviews, usability testing, card sorting, surveys, behavioural analytics, and qual-quant triangulation. |
 | design-systems | 11 | 3 | Build and maintain design systems: tokens, components, accessibility, theming, motion, governance, and localization. |
 | ux-strategy | 12 | 3 | Shape product direction: competitive analysis, design principles, experience mapping, information architecture, content strategy, and service blueprints. |
 | ui-design | 19 | 5 | Craft polished interfaces: layout grids, color systems, typography, responsive design, data viz, Gestalt/perceptual principles, and platform conventions. |
 | interaction-design | 22 | 5 | Design meaningful interactions: micro-animations, state machines, gestures, feedback, cognitive laws, forms, onboarding, navigation, search, and conversational UX. |
-| prototyping-testing | 8 | 4 | Validate designs: prototyping strategies, usability testing, heuristic evaluation, and A/B experiments. |
+| prototyping-testing | 10 | 5 | Validate designs: prototyping strategies, usability testing, heuristic evaluation, and A/B experiments. |
 | design-ops | 9 | 3 | Streamline operations: critique frameworks, handoff specs, sprint planning, team workflows, design debt, and impact reporting. |
-| designer-toolkit | 7 | 3 | Essential utilities: design rationale, presentations, case studies, UX writing, system adoption, and design negotiation. |
+| designer-toolkit | 7 | 4 | Essential utilities: design rationale, presentations, case studies, UX writing, system adoption, and design negotiation. |
 | visual-critique | 7 | 2 | Visual critique: hierarchy, brand consistency, composition, typography, colour, affordance, and information density. |
+
+These nine plugins ship from **this** repo — none of them has a separate repo, and there is nothing to clone. After adding the marketplace, install one by name:
+
+```
+/plugin install ux-strategy@designer-skills
+```
 
 ### All commands
 
@@ -93,6 +101,7 @@ Agentic skills, commands, and plugins for design, from research to systems, UI, 
 | `/design-systems:create-component` | design-systems | Scaffold a full component specification end to end — props, states, variants, accessibility, and documentation. |
 | `/design-systems:tokenize` | design-systems | Extract tokens from an existing design or stylesheet and organise them — naming, structure, and theme mapping. |
 | `/designer-toolkit:build-presentation` | designer-toolkit | Build a design presentation end to end — audience framing, narrative structure, and supporting rationale. |
+| `/designer-toolkit:start-here` | designer-toolkit | Find where to start in the collection — name what you're working on and get routed to one command, the two that follow it, and the stages you can skip. |
 | `/designer-toolkit:write-case-study` | designer-toolkit | Build a portfolio case study end to end — project framing, process narrative, outcomes, and visuals. |
 | `/designer-toolkit:write-rationale` | designer-toolkit | Write design rationale for a set of decisions, linking each to user needs, business goals, and principles. |
 | `/interaction-design:design-form` | interaction-design | Design a form end to end — structure, decision points, chunking, validation, errors, and completion. |
@@ -102,6 +111,7 @@ Agentic skills, commands, and plugins for design, from research to systems, UI, 
 | `/interaction-design:map-states` | interaction-design | Model a component's states and transitions end to end — states, events, guards, and edge cases. |
 | `/prototyping-testing:evaluate` | prototyping-testing | Run a heuristic evaluation end to end — expert review against heuristics with severity ratings and recommended fixes. |
 | `/prototyping-testing:experiment` | prototyping-testing | Design an A/B experiment end to end — hypothesis, variants, primary metric, and sample size. |
+| `/prototyping-testing:explore-options` | prototyping-testing | Run a parallel exploration end to end — frame the decision, build a spread of behaviourally distinct concepts, pressure-test each, and converge with a decision record. |
 | `/prototyping-testing:prototype-plan` | prototyping-testing | Create a prototyping and testing plan for a design initiative. |
 | `/prototyping-testing:test-plan` | prototyping-testing | Choose a testing method and build the plan around it — method selection, task scenarios, click tests, and accessibility coverage. |
 | `/ui-design:color-palette` | ui-design | Run the full colour workflow — tonal scales, semantic mapping, contrast checks, dark mode, and chart colours — and output a documented palette. |
@@ -195,14 +205,17 @@ The two collections are designed to work alongside each other.
 
 ## Recommended install for most designers
 
-If you're not sure where to start, install these four and you'll have coverage across the full design cycle:
+If you're not sure where to start, install these five and you'll have coverage across the full design cycle, plus the router that tells you where to begin:
 
 ```
 /plugin install design-research@designer-skills
 /plugin install ux-strategy@designer-skills
 /plugin install ui-design@designer-skills
 /plugin install design-ops@designer-skills
+/plugin install designer-toolkit@designer-skills
 ```
+
+`designer-toolkit` is the one carrying `/start-here`, so install it even if you want nothing else from it.
 
 Add others as you need them. The plugins are lightweight — installing more doesn't slow things down.
 
@@ -224,7 +237,7 @@ Open an issue. If something isn't working the way you expected, or if a skill ou
 
 ## Contributing
 
-Each collection takes contributions in its own repo. Add a skill, ship its plugin manifest in the same commit, and open a PR. 
+Contribute to a collection in the repo that hosts it. The nine design-practice plugins live here, so skills and fixes for them — `ux-strategy` included — are PRs against this repo. The other four collections take contributions in their own repos, linked in the table above. Add a skill, ship its plugin manifest in the same commit, and open a PR.
 PRs for new skills or structural changes without a corresponding open issue will be closed without review.
 
 ## Community Integrations
